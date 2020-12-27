@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Roboto Mono:pixelsize=12:weight=200:antialias=true:autohint=true";
-static int borderpx = 24;
+static char *font = "Roboto Mono:size=11:weight=200:antialias=true:autohint=true";
+static int borderpx = 40;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -95,31 +95,29 @@ unsigned int tabspaces = 8;
 
 #include "base16.h"
 
+static const Base16Colors base16theme = base16gruvboxdarkmedium;
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	base16onedark.base00, /* black */
-	base16onedark.base08, /* red */
-	base16onedark.base0B, /* green */
-	base16onedark.base0A, /* yellow */
-	base16onedark.base0D, /* blue */
-	base16onedark.base0E, /* magenta */
-	base16onedark.base0C, /* cyan */
-	base16onedark.base05, /* gray */
+	base16theme.base00, /* black */
+	base16theme.base08, /* red */
+	base16theme.base0B, /* green */
+	base16theme.base0A, /* yellow */
+	base16theme.base0D, /* blue */
+	base16theme.base0E, /* magenta */
+	base16theme.base0C, /* cyan */
+	base16theme.base05, /* gray */
 
-	base16onedark.base03, /* light black */
-	base16onedark.base09, /* light red */
-	base16onedark.base0B, /* light green */
-	base16onedark.base0A, /* light yellow */
-	base16onedark.base0D, /* light blue */
-	base16onedark.base0E, /* light magenta */
-	base16onedark.base0C, /* light cyan */
-	base16onedark.base07, /* light gray */
+	base16theme.base03, /* light black */
+	base16theme.base09, /* light red */
+	base16theme.base0B, /* light green */
+	base16theme.base0A, /* light yellow */
+	base16theme.base0D, /* light blue */
+	base16theme.base0E, /* light magenta */
+	base16theme.base0C, /* light cyan */
+	base16theme.base07, /* light gray */
 
 	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
 };
 
 
@@ -129,8 +127,8 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 7;
 unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+static unsigned int defaultcs = 15;
+static unsigned int defaultrcs = 3;
 
 /*
  * Default shape of cursor
